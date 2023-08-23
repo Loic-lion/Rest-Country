@@ -1,13 +1,17 @@
-export default function ContainerCountry() {
+export default function ContainerCountry({
+  name,
+  population,
+  region,
+  capital,
+  flags,
+}) {
   return (
-    <>
-      <div className="container__country">
-        <img src="" alt="Image du drapeau de..." />
-        <h2>Nom du pays</h2>
-        <span>Population: </span>
-        <span>Region: </span>
-        <span>Capital: </span>
-      </div>
-    </>
+    <div className="container__country">
+      <img src={flags} alt={`Flag of ${name}`} />
+      <h2>{name}</h2>
+      <span>Population: {population}</span>
+      <span>Région: {region}</span>
+      <span>Capitale: {capital}</span>
+    </div>
   );
 }
