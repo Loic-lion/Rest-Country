@@ -5,6 +5,7 @@ export default function Detail() {
   const { cca3 } = useParams();
 
   const [countryDetail, setCountryDetail] = useState(null);
+  const [borderCountries, setBorderCountries] = useState([]);
 
   useEffect(() => {
     fetch(`https://restcountries.com/v3.1/alpha/${cca3}`)
@@ -12,6 +13,23 @@ export default function Detail() {
       .then((data) => {
         const countryData = data[0];
         setCountryDetail(countryData);
+        const { borders } = countryData;
+        if (borders && borders.length > 0) {
+          Promise.all(
+            borders.map((border) =>
+              fetch(`https://restcountries.com/v3.1/alpha/${border}`)
+            )
+          )
+            .then((responses) =>
+              Promise.all(responses.map((response) => response.json()))
+            )
+            .then((borderData) => {
+              setBorderCountries(borderData.map((data) => data[0]));
+            })
+            .catch((error) =>
+              console.error("Error fetching border countries:", error)
+            );
+        }
       })
       .catch((error) => console.error("Error:", error));
   }, [cca3]);
@@ -26,7 +44,6 @@ export default function Detail() {
     region,
     capital,
     flags,
-    nativeName,
     subregion,
     tld,
     currencies,
@@ -37,10 +54,12 @@ export default function Detail() {
   return (
     <>
       <button>← Back</button>
-      <img src={flags.png} alt={`Flag of ${name.common}`} />
+      <img src={flags.svg} alt={`Flag of ${name.common}`} />
       <h2>{name.common}</h2>
       <section className="container__detail__main__info">
-        <span>Native Name: {nativeName?.common}</span>
+        <section className="container__detail__main__info">
+          <span>Native Name: {name.nativeName.eng.common}</span>
+        </section>
         <span>Population: {population}</span>
         <span>Region: {region}</span>
         <span>Sub Region: {subregion}</span>
@@ -60,8 +79,8 @@ export default function Detail() {
         <section className="container__detail__border__countries">
           <h3>Border Countries: </h3>
           <div>
-            {borders.map((border, index) => (
-              <div key={index}>{border}</div>
+            {borderCountries.map((border, index) => (
+              <div key={index}>{border.name.common}</div>
             ))}
           </div>
         </section>
