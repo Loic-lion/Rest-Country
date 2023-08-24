@@ -64,6 +64,7 @@ export default function Home() {
             region={country.region}
             capital={country.capital}
             flags={country.flags.svg}
+            cca3={country.cca3}
           />
         ))}
       </div>
