@@ -18,25 +18,32 @@ export default function Home() {
       .catch((error) => console.error("Erreur :", error));
   }, []);
 
-  const handleSearch = () => {
+  function handleSearch(e) {
+    e.preventDefault();
+    const formattedSearchTerm =
+      searchTerm.charAt(0).toUpperCase() + searchTerm.slice(1);
     const filtered = countries.filter((country) =>
-      country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
+      country.name.common.includes(formattedSearchTerm)
     );
     setFilteredCountries(filtered);
-  };
+  }
 
   return (
     <div>
       <div className="search__bar">
-        <button onClick={handleSearch}>
-          <img src={Loupe} alt="image de loupe pour la barre de recherche" />
-        </button>
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Search for a country..."
-        />
+        <form onSubmit={handleSearch} name="searchbar">
+          <div className="search__bar">
+            <button type="submit">
+              <img src={Loupe} alt="icon for the searchbar" />
+            </button>
+            <input
+              type="text"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              placeholder="Search for a country..."
+            />
+          </div>
+        </form>
       </div>
 
       <select defaultValue="">

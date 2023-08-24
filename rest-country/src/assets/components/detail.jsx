@@ -1,23 +1,40 @@
-export default function Detail() {
+export default function Detail(
+  name,
+  population,
+  region,
+  capital,
+  flags,
+  nativeName,
+  subregion,
+  tld,
+  languages,
+  currencies,
+  borders
+) {
   return (
     <>
       <button>← Back</button>
-      <img src="" alt="Image du drapeau de..." />
-      <h2>Nom du pays</h2>
+      <img src={flags} alt={`Flag of ${name}`} />
+      <h2>{name}</h2>
       <section className="container__detail__main__info">
-        <span>Native Name: </span>
-        <span>Population: </span>
-        <span>Region: </span>
-        <span>Sub Region: </span>
-        <span>Capital: </span>
+        <span>Native Name: {nativeName}</span>
+        <span>Population: {population}</span>
+        <span>Region: {region}</span>
+        <span>Sub Region: {subregion}</span>
+        <span>Capital: {capital}</span>
       </section>
       <section className="container__detail__second__info">
-        <span>Top Level Domain: </span>
-        <span>Currencies: </span>
-        <span>Languages: </span>
+        <span>Top Level Domain: {tld}</span>
+        <span>Currencies: {currencies.name}</span>
+        <span>Languages: {languages}</span>
       </section>
       <section className="container__detail__border__countries">
         <h3>Border Countries: </h3>
+        <div>
+          {borders.map((border, index) => (
+            <div key={index}>{border}</div>
+          ))}
+        </div>
       </section>
     </>
   );
