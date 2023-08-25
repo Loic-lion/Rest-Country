@@ -1,0 +1,55 @@
+@import "_variables.scss";
+
+.container__detail {
+  width: 88vw;
+
+  button {
+    font-style: $fontSize4;
+    color: white;
+    margin-bottom: 70px;
+    width: 30%;
+    height: 40px;
+    border-radius: 3px;
+    background-color: $elementColor;
+    border-style: none;
+    cursor: pointer;
+    box-shadow: 0px 0px 15px 5px #00000033;
+  }
+  img {
+    width: 100%;
+    margin-bottom: 70px;
+  }
+  h2 {
+    margin: 0px 0px 60px 0px;
+    font-weight: 800;
+    font-size: 32px;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+    span {
+      margin-bottom: 13px;
+      font-size: $fontSize4;
+      line-height: 18px;
+    }
+  }
+  &__border__countries {
+    span {
+      font-size: $fontSize4;
+      line-height: 18px;
+    }
+    &__container {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 70px;
+      &__stack {
+        background-color: $borderColor;
+        box-shadow: 0px 0px 8px 0px #00000026;
+        padding: 5px 27px 5px 27px;
+        margin: 13px 13px 0px 0px;
+        font-size: $fontSize1;
+      }
+    }
+  }
+}

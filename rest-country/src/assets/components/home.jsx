@@ -68,14 +68,18 @@ export default function Home() {
           <option value="Oceania">Oceania</option>
         </select>
       </div>
-      <div>
+      <div className="container__countries">
         {filteredCountries.map((country, index) => (
           <ContainerCountry
             key={index}
             name={country.name.common}
             population={country.population}
             region={country.region}
-            capital={country.capital}
+            capital={
+              country.capital && country.capital.length > 0
+                ? country.capital[0]
+                : ""
+            }
             flags={country.flags.png}
             cca3={country.cca3}
           />

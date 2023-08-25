@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "../css/detail.css";
 
 export default function Detail() {
   const { cca3 } = useParams();
@@ -51,7 +52,6 @@ export default function Detail() {
     currencies,
     languages,
     borders,
-    altSpellings,
   } = countryDetail;
 
   const nativeNameKeys = Object.keys(name.nativeName);
@@ -59,22 +59,20 @@ export default function Detail() {
   const lastCommonName = name.nativeName[lastCommonKey].common;
 
   return (
-    <>
+    <div className="container__detail">
       <Link to={`/`}>
         <button>← Back</button>
       </Link>
       <img src={flags.svg} alt={`Flag of ${name.common}`} />
       <h2>{name.common}</h2>
-      <section className="container__detail__main__info">
-        <section className="container__detail__main__info">
-          <span>Native Name: {lastCommonName}</span>
-        </section>
+      <section className="container__detail__info">
+        <span>Native Name: {lastCommonName}</span>
         <span>Population: {population}</span>
         <span>Region: {region}</span>
         <span>Sub Region: {subregion}</span>
         <span>Capital: {capital[0]}</span>
       </section>
-      <section className="container__detail__second__info">
+      <section className="container__detail__info">
         <span>Top Level Domain: {tld[0]}</span>
         <span>
           Currencies:{" "}
@@ -86,14 +84,14 @@ export default function Detail() {
       </section>
       {borders && borders.length > 0 && (
         <section className="container__detail__border__countries">
-          <h3>Border Countries: </h3>
-          <div>
+          <span>Border Countries: </span>
+          <div className="container__detail__border__countries__container">
             {borderCountries.map((border, index) => (
-              <div key={index}>{border.name.common}</div>
+              <div className="container__detail__border__countries__container__stack" key={index}>{border.name.common}</div>
             ))}
           </div>
         </section>
       )}
-    </>
+    </div>
   );
 }

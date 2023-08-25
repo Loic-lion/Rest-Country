@@ -1,0 +1,50 @@
+.container__detail {
+  width: 88vw;
+}
+.container__detail button {
+  font-style: 16px;
+  color: white;
+  margin-bottom: 70px;
+  width: 30%;
+  height: 40px;
+  border-radius: 3px;
+  background-color: #2b3743;
+  border-style: none;
+  cursor: pointer;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
+}
+.container__detail img {
+  width: 100%;
+  margin-bottom: 70px;
+}
+.container__detail h2 {
+  margin: 0px 0px 60px 0px;
+  font-weight: 800;
+  font-size: 32px;
+}
+.container__detail__info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 60px;
+}
+.container__detail__info span {
+  margin-bottom: 13px;
+  font-size: 16px;
+  line-height: 18px;
+}
+.container__detail__border__countries span {
+  font-size: 16px;
+  line-height: 18px;
+}
+.container__detail__border__countries__container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 70px;
+}
+.container__detail__border__countries__container__stack {
+  background-color: rgba(43, 55, 67, 0.5019607843);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1490196078);
+  padding: 5px 27px 5px 27px;
+  margin: 13px 13px 0px 0px;
+  font-size: 14px;
+}/*# sourceMappingURL=detail.css.map */

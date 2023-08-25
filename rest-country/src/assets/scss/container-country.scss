@@ -1,0 +1,53 @@
+@import "_variables.scss";
+
+.container__countries__country {
+  width: 70vw;
+  max-width: 265px;
+  background-color: $elementColor;
+  border-radius: 5px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 0px 15px 5px #00000026;
+
+  img {
+    width: 100%;
+    border-radius: 5px 5px 0px 0px;
+    margin-bottom: 32px;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+
+    a {
+      text-decoration: none;
+      color: white;
+      h2 {
+        font-size: 24px;
+        margin-bottom: 23px;
+      }
+    }
+    &__info {
+      margin-bottom: 11px;
+      font-size: $fontSize4;
+      display: flex;
+
+      &:last-child {
+        margin-bottom: 56px;
+      }
+
+      &__weight {
+        font-weight: 500;
+        margin: 0px;
+      }
+      &__normal {
+        font-weight: 400;
+        color: #ffffffbf;
+        margin: 0px;
+        margin-left: 5px;
+      }
+    }
+  }
+}
