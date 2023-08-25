@@ -1,1 +1,29 @@
-/*# sourceMappingURL=header.css.map */
+header {
+  width: 100%;
+  background-color: #2b3743;
+  height: 99px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1490196078);
+  margin-bottom: 30px;
+}
+header h1 {
+  font-weight: 700;
+  font-size: 18px;
+}
+header .container__dark__mode {
+  width: 102px;
+  height: 19px;
+}
+header .container__dark__mode__moon {
+  height: 13px;
+  width: 13px;
+}
+header .container__dark__mode__switch {
+  font-size: 15px;
+  border-style: none;
+  background-color: rgba(0, 129, 176, 0);
+  cursor: pointer;
+  color: #eee;
+}/*# sourceMappingURL=header.css.map */

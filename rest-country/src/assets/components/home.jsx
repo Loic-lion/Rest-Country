@@ -1,6 +1,7 @@
 import Loupe from "../img/magnifying-glass-solid.svg";
 import React, { useState, useEffect } from "react";
 import ContainerCountry from "./container-country";
+import "../css/home.css";
 
 export default function Home() {
   const [regions, setRegions] = useState([]);
@@ -40,32 +41,33 @@ export default function Home() {
     }
   }
   return (
-    <div>
-      <div className="search__bar">
-        <form onSubmit={handleSearch} name="searchbar">
-          <div className="search__bar">
-            <button type="submit">
-              <img src={Loupe} alt="icon for the searchbar" />
-            </button>
-            <input
-              type="text"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Search for a country..."
-            />
-          </div>
+    <>
+      <div className="search">
+        <form onSubmit={handleSearch} name="searchbar" className="search__bar">
+          <button type="submit">
+            <img src={Loupe} alt="icon for the searchbar" />
+          </button>
+          <input
+            type="text"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            placeholder="Search for a country..."
+          />
         </form>
+
+        <select
+          defaultValue=""
+          className="search__filter"
+          onChange={(e) => filterSearch(e.target.value)}
+        >
+          <option value="">Filter by Region</option>
+          <option value="Africa">Africa</option>
+          <option value="America">America</option>
+          <option value="Asia">Asia</option>
+          <option value="Europe">Europe</option>
+          <option value="Oceania">Oceania</option>
+        </select>
       </div>
-
-      <select defaultValue="" onChange={(e) => filterSearch(e.target.value)}>
-        <option value="">Filter by Region</option>
-        <option value="Africa">Africa</option>
-        <option value="America">America</option>
-        <option value="Asia">Asia</option>
-        <option value="Europe">Europe</option>
-        <option value="Oceania">Oceania</option>
-      </select>
-
       <div>
         {filteredCountries.map((country, index) => (
           <ContainerCountry
@@ -79,6 +81,6 @@ export default function Home() {
           />
         ))}
       </div>
-    </div>
+    </>
   );
 }

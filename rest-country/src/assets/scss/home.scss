@@ -1,0 +1,44 @@
+.search {
+  display: flex;
+  flex-direction: column;
+  &__bar {
+    background-color: #2b3743;
+    width: 90vw;
+    height: 59px;
+    box-shadow: 0px 0px 15px 0px #00000026;
+    border-radius: 3px;
+    display: flex;
+    margin-bottom: 51px;
+
+    button {
+      border-radius: 3px;
+      height: 59px;
+      width: 70px;
+      background-color: #2b3743;
+      border-style: none;
+      cursor: pointer;
+
+      img {
+        height: 20px;
+        width: 20px;
+      }
+    }
+    input {
+      height: 59px;
+      background-color: #2b3743;
+      border-style: none;
+      padding: 0px;
+    }
+  }
+  &__filter {
+    display: flex;
+    border-radius: 3px;
+    align-self: self-start;
+    background-color: #2b3743;
+    border-style: none;
+    box-shadow: 0px 0px 15px 0px #00000026;
+    margin-bottom: 42px;
+    color: white;
+    padding: 16px 20px 16px 24px;
+  }
+}

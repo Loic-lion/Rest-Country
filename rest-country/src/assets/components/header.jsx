@@ -5,9 +5,13 @@ export default function Header() {
     <>
       <header>
         <h1>Where in the world?</h1>
-        <div>
-          <img src={FullMoon} alt="icone du dark mode" />
-          <button>Dark Mode</button>
+        <div className="container__dark__mode">
+          <img
+            src={FullMoon}
+            alt="icone du dark mode"
+            className="container__dark__mode__moon"
+          />
+          <button className="container__dark__mode__switch">Dark Mode</button>
         </div>
       </header>
     </>
