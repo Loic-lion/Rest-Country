@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Detail() {
   const { cca3 } = useParams();
@@ -12,6 +13,7 @@ export default function Detail() {
       .then((response) => response.json())
       .then((data) => {
         const countryData = data[0];
+        console.log(countryData);
         setCountryDetail(countryData);
         const { borders } = countryData;
         if (borders && borders.length > 0) {
@@ -49,16 +51,23 @@ export default function Detail() {
     currencies,
     languages,
     borders,
+    altSpellings,
   } = countryDetail;
+
+  const nativeNameKeys = Object.keys(name.nativeName);
+  const lastCommonKey = nativeNameKeys[nativeNameKeys.length - 1];
+  const lastCommonName = name.nativeName[lastCommonKey].common;
 
   return (
     <>
-      <button>← Back</button>
+      <Link to={`/`}>
+        <button>← Back</button>
+      </Link>
       <img src={flags.svg} alt={`Flag of ${name.common}`} />
       <h2>{name.common}</h2>
       <section className="container__detail__main__info">
         <section className="container__detail__main__info">
-          <span>Native Name: {name.nativeName.eng.common}</span>
+          <span>Native Name: {lastCommonName}</span>
         </section>
         <span>Population: {population}</span>
         <span>Region: {region}</span>

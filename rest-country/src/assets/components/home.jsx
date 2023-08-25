@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import ContainerCountry from "./container-country";
 
 export default function Home() {
+  const [regions, setRegions] = useState([]);
   const [countries, setCountries] = useState([]);
   const [filteredCountries, setFilteredCountries] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -28,6 +29,16 @@ export default function Home() {
     setFilteredCountries(filtered);
   }
 
+  function filterSearch(selectedRegion) {
+    if (selectedRegion === "") {
+      setFilteredCountries(countries);
+    } else {
+      const filteredRegions = countries.filter((country) =>
+        country.region.includes(selectedRegion)
+      );
+      setFilteredCountries(filteredRegions);
+    }
+  }
   return (
     <div>
       <div className="search__bar">
@@ -46,7 +57,7 @@ export default function Home() {
         </form>
       </div>
 
-      <select defaultValue="">
+      <select defaultValue="" onChange={(e) => filterSearch(e.target.value)}>
         <option value="">Filter by Region</option>
         <option value="Africa">Africa</option>
         <option value="America">America</option>
@@ -63,7 +74,7 @@ export default function Home() {
             population={country.population}
             region={country.region}
             capital={country.capital}
-            flags={country.flags.svg}
+            flags={country.flags.png}
             cca3={country.cca3}
           />
         ))}

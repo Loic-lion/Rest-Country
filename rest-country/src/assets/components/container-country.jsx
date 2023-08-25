@@ -9,14 +9,14 @@ export default function ContainerCountry({
   cca3,
 }) {
   return (
-    <Link to={`/detail/${cca3}`}>
-      <div className="container__country">
-        <img src={flags} alt={`Flag of ${name}`} />
+    <div className="container__country">
+      <img src={flags} alt={`Flag of ${name}`} />
+      <Link to={`/detail/${cca3}`}>
         <h2>{name}</h2>
-        <span>Population: {population}</span>
-        <span>Region: {region}</span>
-        <span>Capital: {capital}</span>
-      </div>
-    </Link>
+      </Link>
+      <span>Population: {population}</span>
+      <span>Region: {region}</span>
+      <span>Capital: {capital}</span>
+    </div>
   );
 }
