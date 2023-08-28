@@ -28,9 +28,7 @@ export default function Detail({ isDarkMode }) {
             .then((borderData) => {
               setBorderCountries(borderData.map((data) => data[0]));
             })
-            .catch((error) =>
-              console.error("Error fetching border countries:", error)
-            );
+            .catch((error) => console.error("Error border countries:", error));
         }
       })
       .catch((error) => console.error("Error:", error));
@@ -91,7 +89,9 @@ export default function Detail({ isDarkMode }) {
               <div className="country__container__detail__border__countries__container">
                 {borderCountries.map((border, index) => (
                   <div
-                    className={`country__container__detail__border__countries__container__stack ${isDarkMode ? "dark__mode" : ""}`}
+                    className={`country__container__detail__border__countries__container__stack ${
+                      isDarkMode ? "dark__mode" : ""
+                    }`}
                     key={index}
                   >
                     {border.name.common}

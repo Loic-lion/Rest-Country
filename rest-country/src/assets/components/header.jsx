@@ -1,5 +1,6 @@
 import React from "react";
 import FullMoon from "../img/moon-solid.svg";
+import DemiMoon from "../img/moon-regular.svg";
 import "../css/header.css";
 
 export default function Header({ isDarkMode, toggleDarkMode }) {
@@ -8,7 +9,7 @@ export default function Header({ isDarkMode, toggleDarkMode }) {
       <h1>Where in the world?</h1>
       <div className="container__dark__mode">
         <img
-          src={FullMoon}
+          src={isDarkMode ? DemiMoon : FullMoon}
           alt="icone du dark mode"
           className="container__dark__mode__moon"
         />

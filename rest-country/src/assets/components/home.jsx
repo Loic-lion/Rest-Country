@@ -1,4 +1,5 @@
 import Loupe from "../img/magnifying-glass-solid.svg";
+import BlackLoupe from "../img/Search_Magnifying_Glass.svg";
 import React, { useState, useEffect } from "react";
 import ContainerCountry from "./container-country";
 import "../css/home.css";
@@ -49,7 +50,10 @@ export default function Home({ isDarkMode }) {
           className={`search__bar ${isDarkMode ? "dark__mode" : ""}`}
         >
           <button type="submit" className={`${isDarkMode ? "dark__mode" : ""}`}>
-            <img src={Loupe} alt="icon for the searchbar" />
+            <img
+              src={isDarkMode ? BlackLoupe : Loupe}
+              alt="icon for the searchbar"
+            />
           </button>
           <input
             type="text"
