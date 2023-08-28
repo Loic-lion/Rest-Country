@@ -59,39 +59,50 @@ export default function Detail() {
   const lastCommonName = name.nativeName[lastCommonKey].common;
 
   return (
-    <div className="container__detail">
+    <div className="country">
       <Link to={`/`}>
         <button>← Back</button>
       </Link>
-      <img src={flags.svg} alt={`Flag of ${name.common}`} />
-      <h2>{name.common}</h2>
-      <section className="container__detail__info">
-        <span>Native Name: {lastCommonName}</span>
-        <span>Population: {population}</span>
-        <span>Region: {region}</span>
-        <span>Sub Region: {subregion}</span>
-        <span>Capital: {capital[0]}</span>
-      </section>
-      <section className="container__detail__info">
-        <span>Top Level Domain: {tld[0]}</span>
-        <span>
-          Currencies:{" "}
-          {Object.values(currencies)
-            .map((currency) => currency.name)
-            .join(", ")}
-        </span>
-        <span>Languages: {Object.values(languages).join(", ")}</span>
-      </section>
-      {borders && borders.length > 0 && (
-        <section className="container__detail__border__countries">
-          <span>Border Countries: </span>
-          <div className="container__detail__border__countries__container">
-            {borderCountries.map((border, index) => (
-              <div className="container__detail__border__countries__container__stack" key={index}>{border.name.common}</div>
-            ))}
+      <section className="country__container">
+        <img src={flags.svg} alt={`Flag of ${name.common}`} />
+        <div className="country__container__detail">
+          <h2>{name.common}</h2>
+          <div className="country__container__detail__info">
+            <article className="country__container__detail__info__stat">
+              <span>Native Name: {lastCommonName}</span>
+              <span>Population: {population}</span>
+              <span>Region: {region}</span>
+              <span>Sub Region: {subregion}</span>
+              <span>Capital: {capital[0]}</span>
+            </article>
+            <article className="country__container__detail__info__stat">
+              <span>Top Level Domain: {tld[0]}</span>
+              <span>
+                Currencies:{" "}
+                {Object.values(currencies)
+                  .map((currency) => currency.name)
+                  .join(", ")}
+              </span>
+              <span>Languages: {Object.values(languages).join(", ")}</span>
+            </article>
           </div>
-        </section>
-      )}
+          {borders && borders.length > 0 && (
+            <article className="country__container__detail__border__countries">
+              <span>Border Countries: </span>
+              <div className="country__container__detail__border__countries__container">
+                {borderCountries.map((border, index) => (
+                  <div
+                    className="country__container__detail__border__countries__container__stack"
+                    key={index}
+                  >
+                    {border.name.common}
+                  </div>
+                ))}
+              </div>
+            </article>
+          )}
+        </div>
+      </section>
     </div>
   );
 }

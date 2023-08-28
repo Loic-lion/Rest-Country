@@ -56,11 +56,12 @@ export default function Home() {
         </form>
 
         <select
-          defaultValue=""
           className="search__filter"
           onChange={(e) => filterSearch(e.target.value)}
         >
-          <option value="">Filter by Region</option>
+          <option disabled selected>
+            Filter by Region
+          </option>
           <option value="Africa">Africa</option>
           <option value="America">America</option>
           <option value="Asia">Asia</option>

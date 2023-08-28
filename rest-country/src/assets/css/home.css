@@ -4,7 +4,7 @@
 }
 @media screen and (min-width: 1440px) {
   .search {
-    width: 100vw;
+    width: 100%;
   }
 }
 .search__bar {
@@ -37,10 +37,12 @@
 }
 .search__bar input {
   height: 59px;
+  width: 400px;
   background-color: #2b3743;
   border-style: none;
   padding: 0px;
   font-size: 15px;
+  color: white;
 }
 .search__filter {
   display: flex;
