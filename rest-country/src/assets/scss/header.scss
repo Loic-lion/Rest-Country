@@ -1,0 +1,48 @@
+@import "_variables.scss";
+
+header {
+  width: 100%;
+  background-color: $elementColor;
+  height: 99px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0px 0px 15px 0px #00000026;
+  margin-bottom: 30px;
+  @include responsive-desktop {
+    justify-content: space-between;
+  }
+  &.dark__mode {
+    background-color: $elementColorLight;
+    color: black;
+  }
+  h1 {
+    font-weight: 700;
+    font-size: $fontSize3;
+    @include responsive-desktop {
+      margin-left: 81px;
+    }
+  }
+  .container__dark__mode {
+    width: 102px;
+    height: 19px;
+    @include responsive-desktop {
+      margin-right: 81px;
+    }
+
+    &__moon {
+      height: 13px;
+      width: 13px;
+    }
+    &__switch {
+      font-size: $fontSize2;
+      border-style: none;
+      background-color: #0081b000;
+      cursor: pointer;
+      color: #eee;
+      &.dark__mode {
+        color: black;
+      }
+    }
+  }
+}

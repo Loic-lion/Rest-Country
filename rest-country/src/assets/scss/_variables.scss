@@ -1,0 +1,28 @@
+$fontSize1: 14px;
+$fontSize2: 15px;
+$fontSize3: 18px;
+$fontSize4: 16px;
+
+$backgroundColorLight: #ffffff;
+$elementColorLight: #ffffff;
+$elementActiveColorLight: #b3b3b3;
+$elementHoverColorLight: #a8a8a8;
+$borderColorLight: #ffffff;
+
+$backgroundColor: #202d36;
+$elementColor: #2b3743;
+$elementActiveColor: #1f2c38;
+$elementHoverColor: #44505c;
+$borderColor: #2b374380;
+
+@mixin responsive-desktop {
+  @media screen and (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin responsive-tablet {
+  @media screen and (min-width: 376px) and (max-width: 1439px) {
+    @content;
+  }
+}

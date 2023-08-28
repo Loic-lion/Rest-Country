@@ -1,0 +1,113 @@
+.search {
+  display: flex;
+  flex-direction: column;
+}
+.search.dark__mode {
+  background-color: #ffffff;
+}
+@media screen and (min-width: 1440px) {
+  .search {
+    width: 100%;
+  }
+}
+.search__bar {
+  background-color: #2b3743;
+  width: 90vw;
+  max-width: 480px;
+  height: 59px;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1490196078);
+  border-radius: 3px;
+  display: flex;
+  margin-bottom: 51px;
+}
+.search__bar.dark__mode {
+  background-color: #ffffff;
+}
+@media screen and (min-width: 1440px) {
+  .search__bar {
+    margin-left: 81px;
+    margin-bottom: 0px;
+  }
+}
+.search__bar button {
+  border-radius: 3px;
+  height: 59px;
+  width: 70px;
+  background-color: #2b3743;
+  border-style: none;
+  cursor: pointer;
+}
+.search__bar button.dark__mode {
+  background-color: #ffffff;
+}
+.search__bar button img {
+  height: 20px;
+  width: 20px;
+}
+.search__bar input {
+  height: 59px;
+  width: 400px;
+  background-color: #2b3743;
+  border-style: none;
+  padding: 0px;
+  font-size: 15px;
+  color: white;
+}
+.search__bar input.dark__mode {
+  background-color: #ffffff;
+  color: black;
+}
+.search__filter {
+  display: flex;
+  border-radius: 3px;
+  align-self: self-start;
+  background-color: #2b3743;
+  border-style: none;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1490196078);
+  margin-bottom: 42px;
+  color: white;
+  padding: 0px 0px 0px 24px;
+  font-size: 14px;
+  height: 56px;
+  width: 248px;
+}
+.search__filter.dark__mode {
+  background-color: #ffffff;
+  color: black;
+}
+@media screen and (min-width: 1440px) {
+  .search__filter {
+    align-self: self-end;
+    margin-right: 81px;
+  }
+}
+.search__filter option {
+  border-radius: 3px;
+}
+.search__filter option:first-child {
+  margin-top: 4px;
+}
+
+.container__countries {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media screen and (min-width: 1440px) {
+  .container__countries {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    -moz-column-gap: 73px;
+         column-gap: 73px;
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 1439px) {
+  .container__countries {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    -moz-column-gap: 35px;
+         column-gap: 35px;
+  }
+}/*# sourceMappingURL=home.css.map */

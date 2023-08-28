@@ -1,0 +1,23 @@
+@import "normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import "_variables.scss";
+
+body {
+  font-family: "Roboto", sans-serif;
+
+  #root {
+  }
+
+  .app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background-color: $backgroundColor;
+    &.dark__mode {
+      color: black;
+      background-color: $elementColorLight;
+    }
+  }
+}
