@@ -14,5 +14,7 @@ Node.js + npm install
 * Dark mode
 * Accès au pays frontaliers
 ## Aperçu
+Desktop Version:
 ![alt tag](https://github.com/Loic-lion/Rest-Country/blob/main/rest-country/src/assets/img/desktop-version.png?raw=true)
+Mobile VErsion:
 ![alt tag](https://github.com/Loic-lion/Rest-Country/blob/main/rest-country/src/assets/img/mobile-version.png?raw=true)
