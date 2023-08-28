@@ -12,7 +12,10 @@ header {
   @include responsive-desktop {
     justify-content: space-between;
   }
-
+  &.dark__mode {
+    background-color: $elementColorLight;
+    color: black;
+  }
   h1 {
     font-weight: 700;
     font-size: $fontSize3;
@@ -36,8 +39,10 @@ header {
       border-style: none;
       background-color: #0081b000;
       cursor: pointer;
-
       color: #eee;
+      &.dark__mode {
+        color: black;
+      }
     }
   }
 }

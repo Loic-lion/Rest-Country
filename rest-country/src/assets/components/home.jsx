@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import ContainerCountry from "./container-country";
 import "../css/home.css";
 
-export default function Home() {
+export default function Home({ isDarkMode }) {
   const [regions, setRegions] = useState([]);
   const [countries, setCountries] = useState([]);
   const [filteredCountries, setFilteredCountries] = useState([]);
@@ -43,12 +43,17 @@ export default function Home() {
   return (
     <>
       <div className="search">
-        <form onSubmit={handleSearch} name="searchbar" className="search__bar">
-          <button type="submit">
+        <form
+          onSubmit={handleSearch}
+          name="searchbar"
+          className={`search__bar ${isDarkMode ? "dark__mode" : ""}`}
+        >
+          <button type="submit" className={`${isDarkMode ? "dark__mode" : ""}`}>
             <img src={Loupe} alt="icon for the searchbar" />
           </button>
           <input
             type="text"
+            className={`${isDarkMode ? "dark__mode" : ""}`}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search for a country..."
@@ -56,7 +61,7 @@ export default function Home() {
         </form>
 
         <select
-          className="search__filter"
+          className={`search__filter ${isDarkMode ? "dark__mode" : ""}`}
           onChange={(e) => filterSearch(e.target.value)}
         >
           <option disabled selected>
@@ -72,6 +77,7 @@ export default function Home() {
       <div className="container__countries">
         {filteredCountries.map((country, index) => (
           <ContainerCountry
+            isDarkMode={isDarkMode}
             key={index}
             name={country.name.common}
             population={country.population}

@@ -3,6 +3,7 @@ import "../css/container-country.css";
 
 export default function ContainerCountry({
   name,
+  isDarkMode,
   population,
   region,
   capital,
@@ -10,10 +11,10 @@ export default function ContainerCountry({
   cca3,
 }) {
   return (
-    <div className="container__countries__country">
+    <div className={`container__countries__country ${isDarkMode ? "dark__mode" : ""}`}>
       <img src={flags} alt={`Flag of ${name}`} />
       <section className="container__countries__country__container">
-        <Link to={`/detail/${cca3}`}>
+        <Link to={`/detail/${cca3}`} className={`${isDarkMode ? "dark__mode" : ""}`}>
           <h2>{name}</h2>
         </Link>
 

@@ -13,6 +13,10 @@ header {
     justify-content: space-between;
   }
 }
+header.dark__mode {
+  background-color: #ffffff;
+  color: black;
+}
 header h1 {
   font-weight: 700;
   font-size: 18px;
@@ -41,4 +45,7 @@ header .container__dark__mode__switch {
   background-color: rgba(0, 129, 176, 0);
   cursor: pointer;
   color: #eee;
+}
+header .container__dark__mode__switch.dark__mode {
+  color: black;
 }/*# sourceMappingURL=header.css.map */

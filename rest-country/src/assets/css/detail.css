@@ -3,6 +3,9 @@
   display: flex;
   flex-direction: column;
 }
+.country.dark__mode {
+  color: black;
+}
 .country button {
   font-style: 16px;
   color: white;
@@ -14,6 +17,10 @@
   border-style: none;
   cursor: pointer;
   box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
+}
+.country button.dark__mode {
+  background-color: #ffffff;
+  color: black;
 }
 .country button:hover {
   background-color: #44505c;
@@ -114,6 +121,9 @@
   padding: 5px 27px 5px 27px;
   margin: 13px 13px 0px 0px;
   font-size: 14px;
+}
+.country__container__detail__border__countries__container__stack.dark__mode {
+  background-color: #ffffff;
 }
 @media screen and (min-width: 1440px) {
   .country__container__detail__border__countries__container__stack {

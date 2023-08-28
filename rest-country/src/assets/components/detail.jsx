@@ -1,9 +1,8 @@
-import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
 import "../css/detail.css";
 
-export default function Detail() {
+export default function Detail({ isDarkMode }) {
   const { cca3 } = useParams();
 
   const [countryDetail, setCountryDetail] = useState(null);
@@ -59,9 +58,9 @@ export default function Detail() {
   const lastCommonName = name.nativeName[lastCommonKey].common;
 
   return (
-    <div className="country">
+    <div className={`country ${isDarkMode ? "dark__mode" : ""}`}>
       <Link to={`/`}>
-        <button>← Back</button>
+        <button className={`${isDarkMode ? "dark__mode" : ""}`}>← Back</button>
       </Link>
       <section className="country__container">
         <img src={flags.svg} alt={`Flag of ${name.common}`} />
@@ -92,7 +91,7 @@ export default function Detail() {
               <div className="country__container__detail__border__countries__container">
                 {borderCountries.map((border, index) => (
                   <div
-                    className="country__container__detail__border__countries__container__stack"
+                    className={`country__container__detail__border__countries__container__stack ${isDarkMode ? "dark__mode" : ""}`}
                     key={index}
                   >
                     {border.name.common}

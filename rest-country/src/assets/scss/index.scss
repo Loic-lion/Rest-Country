@@ -4,11 +4,20 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  color: white;
-  background-color: $backgroundColor;
+
   #root {
+  }
+
+  .app {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: white;
+    background-color: $backgroundColor;
+    &.dark__mode {
+      color: black;
+      background-color: $elementColorLight;
+    }
   }
 }

@@ -3,6 +3,9 @@
 .search {
   display: flex;
   flex-direction: column;
+  &.dark__mode {
+    background-color: $elementColorLight;
+  }
   @include responsive-desktop {
     width: 100%;
   }
@@ -15,6 +18,9 @@
     border-radius: 3px;
     display: flex;
     margin-bottom: 51px;
+    &.dark__mode {
+      background-color: $elementColorLight;
+    }
     @include responsive-desktop {
       margin-left: 81px;
       margin-bottom: 0px;
@@ -25,6 +31,9 @@
       width: 70px;
       background-color: $elementColor;
       border-style: none;
+      &.dark__mode {
+        background-color: $elementColorLight;
+      }
       cursor: pointer;
 
       img {
@@ -40,6 +49,10 @@
       padding: 0px;
       font-size: $fontSize2;
       color: white;
+      &.dark__mode {
+        background-color: $elementColorLight;
+        color: black;
+      }
     }
   }
   &__filter {
@@ -55,6 +68,10 @@
     font-size: $fontSize1;
     height: 56px;
     width: 248px;
+    &.dark__mode {
+      background-color: $elementColorLight;
+      color: black;
+    }
 
     @include responsive-desktop {
       align-self: self-end;
