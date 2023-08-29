@@ -1,4 +1,4 @@
-# Rest-Country (WIP)
+# Rest-Country
 ## Projet solo
 __Création d'une appli qui permet d'afficher des données d'un pays.__
 * 5 jours de travail (23/08/23 au 28/08/23?)
